@@ -1,11 +1,30 @@
 #!/bin/zsh
 
-install_powerline() {
-DIR="$0:A:h"
-
+install_git() {
+  brew install git
+  brew link git --force
 }
 
-echo "Installing powerline fonts"
+install_git_duet() {
+  brew install git-duet/tap/git-duet
+}
+
+# install_powerline() {
+#   echo "Installing powerline fonts\n"
+#   pushd "$HOME/workspace"
+#     git clone https://github.com/powerline/fonts.git powerline-fonts
+#     pushd powerline-fonts
+#       ./install.sh
+#     popd
+#   popd
+# }
+
+main() {
+  install_git
+  install_git_duet
+}
+
+main $@
 
 
 
