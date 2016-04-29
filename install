@@ -9,19 +9,36 @@ install_git_duet() {
   brew install git-duet/tap/git-duet
 }
 
-# install_powerline() {
-#   echo "Installing powerline fonts\n"
-#   pushd "$HOME/workspace"
-#     git clone https://github.com/powerline/fonts.git powerline-fonts
-#     pushd powerline-fonts
-#       ./install.sh
-#     popd
-#   popd
-# }
+install_golang() {
+  brew install golang
+}
+
+install_iterm() {
+  brew cask install iterm2
+}
+
+install_omz() {
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+}
+
+install_powerline() {
+  echo "Installing powerline fonts\n"
+  pushd "$HOME/workspace"
+    git clone https://github.com/powerline/fonts.git powerline-fonts
+    pushd powerline-fonts
+      ./install.sh
+    popd
+  popd
+}
 
 main() {
   install_git
   install_git_duet
+  install_golang
+  install_iterm
+  install_omz
+  install_powerline
+  link_dotfiles
 }
 
 main $@
