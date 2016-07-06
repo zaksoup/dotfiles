@@ -11,6 +11,14 @@ export GOPATH=$HOME/go
 # nvim stuff
 export EDITOR=vim
 
+# Run `set_title "your title here"` to set terminal title
+#
+# To allow this in ITerm2: check Profiles > Open Profiles > Edit Profiles >
+# Terminal > Terminal Emulation > Terminal may set tab/window title
+function set_title() {
+  echo -ne "\e]1;$1\a"
+}
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -34,7 +42,7 @@ export ZSH_THEME="zagnoster"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
